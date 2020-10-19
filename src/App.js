@@ -1,24 +1,18 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { ColorExtractor } from 'react-color-extractor'
 
 function App() {
+
+  const image = 'https://cors-anywhere.herokuapp.com/https://cdn.pixabay.com/photo/2018/02/08/22/27/flower-3140492_1280.jpg';
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <ColorExtractor getColors={colors => console.log(colors)}>
+          <img crossOrigin="anonymous" src={image} alt="flower" style={{maxWidth: '100%'}}/>
+        </ColorExtractor>
+
+        <p>Color Palette in Console</p>
     </div>
   );
 }
