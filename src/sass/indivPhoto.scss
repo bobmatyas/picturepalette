@@ -1,0 +1,76 @@
+.total-container {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.photo-container {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.color-palette {
+padding-left: 5%;
+}
+
+.comp-colors-title {
+  font-size: 2.4rem;
+  color: $darkergray;
+}
+
+.dark {
+  .comp-colors-title {
+    color: white;
+  }
+
+  .photo-bar {
+    color: $darkergray;
+}
+}
+
+.color2 {
+    /* background-color: #000; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+  }
+
+.color2__label {
+  text-transform: uppercase;
+  font-size: 1.3rem;
+}
+
+// need to add buttons and style, different color?
+.photo-bar {
+    background-color: #eee;
+    padding: 5px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-transform: uppercase;
+}
+
+.imageSize {
+  width: 100%;
+}
+
+.imageDetails {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+// need to add photos from last search, max number of items
+// .similar-photos{
+//     width: 100%;
+//     display: flex;
+//     justify-content: left;
+//     flex-wrap: wrap;
+// }
