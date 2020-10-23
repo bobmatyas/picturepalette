@@ -1,7 +1,3 @@
-/* this imports normalize.scss to make spacing, padding, native element display consistent across
-browsers */
-
-@import 'normalize';
 
 /* these imports are for individual components/sections of the app */
 @import 'colors';
@@ -75,12 +71,12 @@ h2 {
   line-height: 1.6rem;
 }
 
-.title-pic{
+.title-pic {
   text-align: center;
   font-size: 2.6rem;
 }
 
-.title-pal{
+.title-pal {
   text-align: center;
   font-size: 2.6rem;
 }
@@ -361,43 +357,6 @@ h2 {
 body { 
   background-color: #fff;
   color: #000;
-}
-
-.welcome {
-  margin: 5px auto;
-  border: 4px solid $yellow;
-  padding: 20px;
-  text-align: center;
-  color: $darkergray;
-  font-family: arial;
-  position: relative;
-  width: 80%;
-}
-
-.welcome:before {
-  content: "";
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid $yellow;
-  right: 50%;
-  top: -23px;
-}
-
-.welcome:after {
-  content: "";
-  width: 0px;
-  height: 0px;
-  position: absolute;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid #fff;
-  right: 50%;
-  top: -18px;
 }
 
 
