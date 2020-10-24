@@ -1,0 +1,25 @@
+.btn {
+  --background-color: #000;
+  --text-color: #fff;
+
+  background-color: var(--background-color);
+  color: var(--text-color); 
+  border: solid 2px #eee;
+  font-size: 2rem;
+  font-weight: 900;
+  height: 200px;
+  padding: 25px;
+  text-transform: uppercase;
+  width: 200px;
+}
+
+.btn:hover {
+    border: 10px solid var(--text-color);
+    cursor: pointer;
+    transition: border 0.2s;
+}
+
+.btn:focus {
+    border: 10px solid var(--text-color);
+    transition: border 0.2s;  
+}
