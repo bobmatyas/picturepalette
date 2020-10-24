@@ -7,7 +7,7 @@ return (
 <header className="navigation-container">
       
 <div>
-  <h1 className="logo"><a href="#">Picture<span className="logo2">Palette</span></a></h1>
+  <h1 className="logo"><a href="./">Picture<span className="logo2">Palette</span></a></h1>
 </div>
 
 <nav>

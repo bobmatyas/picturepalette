@@ -1,5 +1,4 @@
 import React from 'react';
-import styled from "styled-components";
 import ColorButton from './Color-Button';
 
 function ColorSelection() {
