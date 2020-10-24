@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import ColorProvider from "./ColorProvider"
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ColorProvider>
+      <App />
+    </ColorProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
