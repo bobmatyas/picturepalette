@@ -14,14 +14,20 @@ const Heading = styled.h2`
 `;
 
 const HeadingText = styled.span`
-    font-weight: 400;
+    font-size: 5.5rem;    
+    font-style: italic;
+    font-weight: 500;
 `;
 
 
 const HeadingColor = styled.span`
     font-size: 11rem;
     font-weight: 700;
-    padding: 0 20px; 
+    padding: 0 20px;
+    text-shadow: 2px 2px rgba(0,0,0, 0.2); 
+    font-style: italic;
+    letter-spacing: -8px;
+    margin-left: -10px;
 `;
 
 
