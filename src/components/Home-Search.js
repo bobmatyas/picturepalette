@@ -2,6 +2,7 @@ import React from 'react';
 import { useColorContext } from '../ColorProvider';
 import styled from 'styled-components';
 import './Home-Search.css';
+import Photos from './Photos';
 
 const Search = styled.div`
     background-color: #eee;
@@ -10,12 +11,12 @@ const Search = styled.div`
 `;
 
 const FilterHolder = styled.fieldset`
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
   border: 2px solid rgba(0,0,0, 0.1);
-  padding: 25px 50px;
   border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  padding: 25px 50px;
 `;
 
 function HomeSearch() {
@@ -23,6 +24,8 @@ function HomeSearch() {
     const { color } = useColorContext();
 
     return (
+        <>
+
         <Search style={{borderTop: '2px solid' + color.hex, borderBottom: '2px solid' + color.hex}}>
             <FilterHolder>
         <div className="home__search__bar__input__holder__box">
@@ -57,6 +60,8 @@ function HomeSearch() {
         </FilterHolder>
     
         </Search>
+        <Photos />
+        </>
     )
 }
 
