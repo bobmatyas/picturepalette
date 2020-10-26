@@ -7,7 +7,8 @@ export default function ColorProvider ({ children }) {
     const [color, setColor ] = useState([]);
 
     const selectColor = (selectedColor) => {
-        setColor(color.push(selectedColor));
+        setColor(selectedColor);
+        console.log(color);
     }
 
 

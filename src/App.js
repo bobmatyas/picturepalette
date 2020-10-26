@@ -16,7 +16,7 @@ function App() {
 
       <main>
         <Heading />
-        <Welcome />
+        { color.length < 1 ? <Welcome /> : '' }
         { color.length < 1 ?  <ColorSelection /> : '' }
 
       </main>
