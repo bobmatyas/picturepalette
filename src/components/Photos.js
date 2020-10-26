@@ -1,6 +1,7 @@
 import React from 'react';
 //import { useColorContext } from '../ColorProvider';
 import styled from 'styled-components';
+import Card from './Card'
 
 const PhotosHolder = styled.div`
     background-color: #f6f6f6;
@@ -19,6 +20,8 @@ function Photos() {
     return (
         <PhotosHolder>
             <ResultsHeader>Results</ResultsHeader>
+
+            <Card />
         </PhotosHolder>
     )
 }
