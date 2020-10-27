@@ -21,7 +21,10 @@ function Photos() {
         <PhotosHolder>
             <ResultsHeader>Results</ResultsHeader>
 
-            <Card />
+            <Card
+                image="https://cdn.pixabay.com/photo/2016/02/13/13/11/cuba-1197800_960_720.jpg"
+                tags="Cuba, Oldtimer, Old Car, Forest, Red, Travel, Car" 
+            />
         </PhotosHolder>
     )
 }
