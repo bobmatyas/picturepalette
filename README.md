@@ -1,5 +1,36 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+This is a re-write of my final project from the Grand Circus Front End Web Development bootcamp. The initial version of [PicturePalette](https://github.com/bobmatyas/gc-final-project) was written using [AnguarJS](https://www.angularjs.org). 
+
+I re-wrote the project in ReactJS to gain experience with ReactJS and also to experience the process of refactoring a project using a legacy framework.
+
+
+## Improvements over Initial Version
+
+### APIs
+
+- The initial version of the project depended on a third party API to generate the color schemes. In this version I made use of a React library to generate the palettes and eliminated the reliance on a second API. 
+
+
+### Code Improvements 
+
+- Moved to component-based CSS instead of global CSS
+- Utilized modern CSS including Grid, CSS Custom Properties, and CSS-in-JS (Styled Components)
+- Made better use of component-based architecture
+- Implemented different header background that didn't rely on painting dozens of empty DIVs
+
+
+### Accessibility
+
+- Added ability to navigate via keyboard
+- Improved color contrast on homepage buttons
+- Proper semantic elements used 
+- Added ALT tags to card images
+- Improved color contrast on buttons throughout site
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
