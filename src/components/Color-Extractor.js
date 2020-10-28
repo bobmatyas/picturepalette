@@ -28,19 +28,27 @@ function ColorPalette(props) {
 
     /* TODO: import context and set colors to state. */
 
+    let colors = [];
+
+    const colorList  = (colors) => {
+        colors = colors;
+        console.log(colors);
+    }
+
     return (
         <PageLayout>
         <PhotoHolder>
-            <ColorExtractor getColors={colors => console.log(colors)}>
-            <img crossOrigin="anonymous" src={image} alt={props.tag} style={{maxWidth: '100%'}}/>
-        </ColorExtractor>
+            <ColorExtractor getColors={colors => colorList(colors) }>
+                <img crossOrigin="anonymous" src={image} alt={props.tag} style={{maxWidth: '100%'}}/>
+            </ColorExtractor>
         
         </PhotoHolder>
         
         <PaletteHolder>
             <PaletteHeading>Color Palette</PaletteHeading>
+            {colors}
         </PaletteHolder>
-
+        
         </PageLayout>
     )
 }
