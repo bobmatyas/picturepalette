@@ -30,7 +30,7 @@ function HomeSearch() {
             <FilterHolder>
         <div className="home__search__bar__input__holder__box">
         <label htmlFor="searchText" className="home__search__bar__input__holder__label__search">Keyword Search:</label>
-        <input type="text" id="searchText" maxlength="100" placeholder="Enter Search Term" />
+        <input type="text" id="searchText" maxLength="100" placeholder="Enter Search Term" />
         </div>
 
           <div className="home__search__bar__input__holder__box">

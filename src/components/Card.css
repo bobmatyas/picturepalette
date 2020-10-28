@@ -9,6 +9,7 @@ max-width: 300px;
 -moz-box-shadow: 0px 0px 25px -1px rgba(0, 0, 0, 0.28);
 box-shadow: 0px 0px 25px -1px rgba(0, 0, 0, 0.28);
 text-align: center;
+min-width: 300px;
 }
 
 /*
