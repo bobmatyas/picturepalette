@@ -1,12 +1,12 @@
 import React from 'react';
 //import { useColorContext } from '../ColorProvider';
-import styled from 'styled-components';
+//import styled from 'styled-components';
 import './Card.css'
 import ColorPalette from './Color-Extractor';
+import PropTypes from 'prop-types';
 
 
 function Card(props) {
-
 
     return (
         <>
@@ -27,4 +27,9 @@ function Card(props) {
     )
 }
 
-export default Card;
+Card.propTypes = {
+    tags: PropTypes.string,
+    image: PropTypes.string
+};
+
+ export default Card;
