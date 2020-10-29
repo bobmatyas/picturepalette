@@ -10,7 +10,7 @@ I re-wrote the project in ReactJS to gain experience with ReactJS and also to ex
 
 ### APIs
 
-- The initial version of the project depended on a third party API to generate the color schemes. In this version I made use of a React library to generate the palettes and eliminated the reliance on a second API. 
+- The initial version of the project depended on a third party API to generate the color schemes. In this version I used a React library to generate the palettes and eliminated the reliance on a second API. 
 
 
 ### Code Improvements 
@@ -18,6 +18,7 @@ I re-wrote the project in ReactJS to gain experience with ReactJS and also to ex
 - Moved to component-based CSS instead of global CSS
 - Utilized modern CSS including Grid, CSS Custom Properties, and CSS-in-JS (Styled Components)
 - Made better use of component-based architecture
+- Utilized PropTypes library for basic type checking
 - Implemented different header background that didn't rely on painting dozens of empty DIVs
 
 
