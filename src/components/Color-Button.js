@@ -1,7 +1,7 @@
 import React from 'react';
 import './Color-Button.css';
 import { useColorContext } from '../ColorProvider';
-
+import PropTypes from 'prop-types';
 
 function ColorButton(props) {
 
@@ -28,5 +28,11 @@ function ColorButton(props) {
         </button>
     )
 }
+
+ColorButton.propTypes = {
+    color: PropTypes.string.isRequired,
+    hex: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired
+};
 
 export default ColorButton;

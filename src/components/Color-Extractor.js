@@ -2,6 +2,7 @@ import React from 'react';
 import { ColorExtractor } from 'react-color-extractor';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import Swatch from './Swatch'
 
 const PageLayout = styled.div`
     display: flex;
@@ -15,6 +16,7 @@ const PhotoHolder = styled.div`
 `;
 
 const PaletteHolder = styled.div`
+    padding: 0 5%;
     width: 45%;
 `;
 
@@ -22,25 +24,6 @@ const PaletteHeading = styled.h2`
     color: #353F3E;
     font-size: 2.4rem;
 `;
-
-
-function RenderSwatches(props) {
-    
-    const colors = props.colors;
-
-    return colors.map((color, id) => {
-      return (
-        <div
-          key={id}
-          style={{
-            backgroundColor: color,
-            width: 100,
-            height: 100
-          }}
-        />
-      )
-    })
-}
 
 function ColorPalette(props) {
     
@@ -57,7 +40,7 @@ function ColorPalette(props) {
     return (
         <PageLayout>
         <PhotoHolder>
-            <ColorExtractor getColors={colors => colorList(colors) }>
+            <ColorExtractor getColors={colors => console.log(colors) }>
                 <img crossOrigin="anonymous" src={image} alt={props.tag} style={{maxWidth: '100%'}}/>
             </ColorExtractor>
         
@@ -65,7 +48,8 @@ function ColorPalette(props) {
         
         <PaletteHolder>
             <PaletteHeading>Color Palette</PaletteHeading>
-            { colors ? <RenderSwatches colors={colors} /> :  '' } 
+            
+            { colors ? <Swatch colors={colors} /> :  '' } 
         
         </PaletteHolder>
         
@@ -74,8 +58,8 @@ function ColorPalette(props) {
 }
 
 ColorPalette.propTypes = {
-    tags: PropTypes.string,
-    image: PropTypes.string
+    tags: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired
 };
 
 export default ColorPalette;

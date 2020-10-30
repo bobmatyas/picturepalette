@@ -22,7 +22,7 @@ function Photos() {
             <ResultsHeader>Results</ResultsHeader>
 
             <Card
-                image="https://cdn.pixabay.com/photo/2016/02/13/13/11/cuba-1197800_960_720.jpg"
+                image="https://cdn.pixabay.com/photo/2015/11/07/11/06/pumpkin-1030817_1280.jpg"
                 tags="Cuba, Oldtimer, Old Car, Forest, Red, Travel, Car" 
             />
         </PhotosHolder>
