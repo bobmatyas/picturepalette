@@ -8,7 +8,6 @@ export default function ColorProvider ({ children }) {
 
     const selectColor = (selectedColor) => {
         setColor(selectedColor);
-        console.log(color);
     }
 
 

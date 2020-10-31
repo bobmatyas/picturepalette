@@ -6,7 +6,12 @@ import ColorPalette from './Color-Extractor';
 import PropTypes from 'prop-types';
 
 
-function Card(props) {
+function Card({tags, image, generatePalette}) {
+
+    const showPalette = (tags, image) =>  {
+        console.log(tags);
+        return generatePalette(tags, image);
+    }
 
     return (
         <>
@@ -14,22 +19,20 @@ function Card(props) {
             <div 
                 className="card__image__container"
                 role="img" 
-                aria-label={props.tags}
-                style={{backgroundImage: 'url(' + props.image + ')'}} 
+                aria-label={tags}
+                style={{backgroundImage: 'url(' + image + ')'}} 
             />
-            <button className="card__button">Generate Palette</button>
+            <button className="card__button" onClick={ ()=> showPalette(tags, image)}>Generate Palette</button>
         </article>
-        <ColorPalette 
-            tags={props.tags}
-            image={props.image}
-        />
+
         </>
     )
 }
 
 Card.propTypes = {
-    tags: PropTypes.string,
-    image: PropTypes.string
+    tags: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    generatePalette: PropTypes.func.isRequired
 };
 
  export default Card;

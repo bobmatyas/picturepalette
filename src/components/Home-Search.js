@@ -77,7 +77,7 @@ function HomeSearch() {
         .then(setData)
         .then(() => setLoading(false))
         .catch(setError);
-    }, [search]);
+    }, [search, API_KEY, color.color]);
   
     if (loading) return <h2>loading...</h2>;
     if (error) return <pre>{JSON.stringify(error, null, 2)}</pre>;
