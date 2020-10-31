@@ -4,6 +4,27 @@ import styled from 'styled-components';
 import './Home-Search.css';
 import Photos from './Photos';
 
+const searchCategories = ['animals', 
+    'backgrounds', 
+    'buildings', 
+    'business', 
+    'computer', 
+    'education', 
+    'fashion', 
+    'feelings', 
+    'food', 
+    'health', 
+    'industry', 
+    'music', 
+    'nature', 
+    'people', 
+    'places', 
+    'religion', 
+    'science', 
+    'sports', 
+    'transportation', 
+    'travel']
+
 const Search = styled.div`
     background-color: #eee;
     padding: 3% 5%;    
@@ -18,6 +39,8 @@ const FilterHolder = styled.fieldset`
   justify-content: center;
   padding: 25px 50px;
 `;
+
+
 
 function HomeSearch() {
 
@@ -37,9 +60,11 @@ function HomeSearch() {
       
             <label htmlFor="photoCategory" className="home__search__bar__input__holder__label__search">Category:</label>
             <select id="photoCategory" className="home__search__bar__input__holder__select">
-              <option value="" disabled="" hidden="">Please Choose... </option>
-              <option value="" selected="selected"></option>
-              <option>Test</option>
+            { 
+              searchCategories.map((category, i) =>
+                <option value={category} key={i}>{ category.charAt(0).toUpperCase()+ category.substr(1).toLowerCase() }</option>
+              ) 
+            }
             </select>
           </div>
         
@@ -47,7 +72,9 @@ function HomeSearch() {
 
           <label htmlFor="photoOrientation" className="home__search__bar__input__holder__label__search">Orientation:</label>
           <select id="photoOrientation" className="home__search__bar__input__holder__select"> 
-            <option> All</option>
+            <option defaultValue="All"> All</option>
+            <option value="Horizontal"> Horizontal</option>
+            <option value="Vertical"> Vertical</option>
           </select>
 
           </div>
