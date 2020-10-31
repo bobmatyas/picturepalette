@@ -46,6 +46,7 @@ function HomeSearch() {
 
     const { color } = useColorContext();
     const [search, setSearch] = useState();
+    const [placeHolder, setPlaceholder] = useState();
     const [data, setData] = useState();
     const [error, setError] = useState();
     const [loading, setLoading] = useState(false);
@@ -53,9 +54,20 @@ function HomeSearch() {
     const API_KEY = process.env.REACT_APP_PIXABAY;
 
     function handleSubmit(event) {
-      event.preventDefault()
-      console.log(event.target.elements.searchText.value)
-      setSearch(event.target.elements.searchText.value)
+      event.preventDefault();
+      if (!event.target.elements.searchText.value) { return } 
+
+      let search = event.target.elements.searchText.value;
+
+      setPlaceholder(search);
+
+      if (event.target.elements.photoCategory.value) 
+        search = `${search}&category=${event.target.elements.photoCategory.value}`
+
+      if (event.target.elements.photoOrientation.value)
+        search = `${search}&category=${event.target.elements.photoCategory.value}`
+
+      setSearch(search)
     }
 
     useEffect(() => {
@@ -64,7 +76,6 @@ function HomeSearch() {
         .then(data => data.json())
         .then(setData)
         .then(() => setLoading(false))
-        .then(console.log(data))
         .catch(setError);
     }, [search]);
   
@@ -79,17 +90,19 @@ function HomeSearch() {
 
         <Search style={{borderTop: '2px solid' + color.hex, borderBottom: '2px solid' + color.hex}}>
 
-            <FilterHolder>
         <form onSubmit={handleSubmit}>
+            <FilterHolder>
+
         <div className="home__search__bar__input__holder__box">
         <label htmlFor="searchText" className="home__search__bar__input__holder__label__search">Keyword Search:</label>
-        <input type="text" id="searchText" maxLength="100" placeholder="Enter Search Term" />
+        <input type="text" id="searchText" maxLength="100" required placeholder={ placeHolder ? placeHolder : 'Enter Search Term' } />
         </div>
 
           <div className="home__search__bar__input__holder__box">
       
             <label htmlFor="photoCategory" className="home__search__bar__input__holder__label__search">Category:</label>
             <select id="photoCategory" className="home__search__bar__input__holder__select">
+              <option defaultValue="All"> All</option>
             { 
               searchCategories.map((category, i) =>
                 <option value={category} key={i}>{ category.charAt(0).toUpperCase()+ category.substr(1).toLowerCase() }</option>
@@ -102,9 +115,9 @@ function HomeSearch() {
 
           <label htmlFor="photoOrientation" className="home__search__bar__input__holder__label__search">Orientation:</label>
           <select id="photoOrientation" className="home__search__bar__input__holder__select"> 
-            <option defaultValue="All"> All</option>
-            <option value="Horizontal"> Horizontal</option>
-            <option value="Vertical"> Vertical</option>
+            <option defaultValue="all"> All</option>
+            <option value="horizontal"> Horizontal</option>
+            <option value="vertical"> Vertical</option>
           </select>
 
           </div>
@@ -113,14 +126,14 @@ function HomeSearch() {
             <button className="button" type="submit"> 
               Search
             </button>            
-          </div>
-          </form>          
+          </div>         
         </FilterHolder>
-    
+        </form>
         </Search>
-        <Photos
+        
+        { search ? <Photos
           results={data.hits}
-        />
+        /> : '' }
         </>
     )
 }

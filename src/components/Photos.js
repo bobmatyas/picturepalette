@@ -12,7 +12,7 @@ const PhotosHolder = styled.div`
 
 const ResultsHeader = styled.h2`
     font-size: 2.4rem;
-    color: #999;
+    color: #353F3E;
 `;
 
 function Photos(props) {
