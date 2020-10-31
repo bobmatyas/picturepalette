@@ -2,6 +2,7 @@ import React from 'react';
 //import { useColorContext } from '../ColorProvider';
 import styled from 'styled-components';
 import Card from './Card'
+import PropTypes from 'prop-types';
 
 const PhotosHolder = styled.div`
     background-color: #f6f6f6;
@@ -14,19 +15,29 @@ const ResultsHeader = styled.h2`
     color: #999;
 `;
 
-function Photos() {
+function Photos(props) {
 
+    const results = props.results 
 
     return (
         <PhotosHolder>
             <ResultsHeader>Results</ResultsHeader>
 
-            <Card
-                image="https://cdn.pixabay.com/photo/2015/11/07/11/06/pumpkin-1030817_1280.jpg"
-                tags="Cuba, Oldtimer, Old Car, Forest, Red, Travel, Car" 
-            />
+            { 
+             results.map((photo, i) =>
+                <Card
+                    key={i}
+                    image={photo.webformatURL}
+                    tags={photo.tags}
+                />
+              ) 
+            }
         </PhotosHolder>
     )
 }
 
 export default Photos;
+
+Photos.propTypes = {
+    results: PropTypes.array.isRequired
+};

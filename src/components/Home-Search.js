@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect }  from 'react';
 import { useColorContext } from '../ColorProvider';
 import styled from 'styled-components';
 import './Home-Search.css';
@@ -45,12 +45,42 @@ const FilterHolder = styled.fieldset`
 function HomeSearch() {
 
     const { color } = useColorContext();
+    const [search, setSearch] = useState();
+    const [data, setData] = useState();
+    const [error, setError] = useState();
+    const [loading, setLoading] = useState(false);
+  
+    const API_KEY = process.env.REACT_APP_PIXABAY;
 
+    function handleSubmit(event) {
+      event.preventDefault()
+      console.log(event.target.elements.searchText.value)
+      setSearch(event.target.elements.searchText.value)
+    }
+
+    useEffect(() => {
+      setLoading(true);
+      fetch(`https://pixabay.com/api/?key=${API_KEY}&image_type=photo&colors=${color.color}&q=${search}`)
+        .then(data => data.json())
+        .then(setData)
+        .then(() => setLoading(false))
+        .then(console.log(data))
+        .catch(setError);
+    }, [search]);
+  
+    if (loading) return <h2>loading...</h2>;
+    if (error) return <pre>{JSON.stringify(error, null, 2)}</pre>;
+    if (!data) return null;
+
+    
     return (
         <>
+        { console.log(data) }
 
         <Search style={{borderTop: '2px solid' + color.hex, borderBottom: '2px solid' + color.hex}}>
+
             <FilterHolder>
+        <form onSubmit={handleSubmit}>
         <div className="home__search__bar__input__holder__box">
         <label htmlFor="searchText" className="home__search__bar__input__holder__label__search">Keyword Search:</label>
         <input type="text" id="searchText" maxLength="100" placeholder="Enter Search Term" />
@@ -80,14 +110,17 @@ function HomeSearch() {
           </div>
 
           <div className="home__search__input__holder__box">
-            <button className="button">
+            <button className="button" type="submit"> 
               Search
             </button>            
-          </div>          
+          </div>
+          </form>          
         </FilterHolder>
     
         </Search>
-        <Photos />
+        <Photos
+          results={data.hits}
+        />
         </>
     )
 }

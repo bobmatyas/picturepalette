@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ColorExtractor } from 'react-color-extractor';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
@@ -26,29 +26,26 @@ const PaletteHeading = styled.h2`
 `;
 
 function ColorPalette(props) {
-    
+
+    const [colors, setColors] = useState([]);
+
+    const colorList = colors => {
+        setColors(colors);  
+}
+
     const image = `https://cors-anywhere.herokuapp.com/${props.image}`;
-
-    /* TODO: import context and set colors to state. */
-
-    let colors = ["#978c21", "#e8bc84", "#74840c", "#a89e72", "#cac4a4", "#585434"];
-
-    const colorList  = () => {
-        console.log(colors);
-    }
 
     return (
         <PageLayout>
         <PhotoHolder>
-            <ColorExtractor getColors={colors => console.log(colors) }>
+            <ColorExtractor getColors={colorList} >
                 <img crossOrigin="anonymous" src={image} alt={props.tag} style={{maxWidth: '100%'}}/>
-            </ColorExtractor>
-        
+            </ColorExtractor>       
         </PhotoHolder>
         
         <PaletteHolder>
             <PaletteHeading>Color Palette</PaletteHeading>
-            
+    
             { colors ? <Swatch colors={colors} /> :  '' } 
         
         </PaletteHolder>
