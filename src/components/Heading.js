@@ -12,8 +12,9 @@ const HeadingHolder = styled.div`
     background-size: 70px 70px;
     display: flex;
     flex-direction: column;
-    height: 200px;
+    height: 230px;
     justify-content: center;
+    padding-top: 50px;
 `;
 
 function Heading() {

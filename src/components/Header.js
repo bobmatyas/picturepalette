@@ -1,5 +1,7 @@
 import React from 'react';
 import '../sass/header.scss'
+import { MdSearch } from "react-icons/md";
+import { MdFavoriteBorder } from "react-icons/md";
 
 function Header() {
 
@@ -12,11 +14,19 @@ return (
 
 <nav>
   <ul className="navigation-menu">
+  <li>
+      <a href="/" >             
+        <span style={{fontSize: 24+'px'}}>
+          <MdSearch />
+        </span>
+        search  
+      </a>
+    </li>
     <li>
-      <a href="#!/favorites">             
-        <i className="material-icons">
-            favorite_border
-        </i>
+      <a href="#!/favorites" >             
+        <span style={{fontSize: 24+'px'}}>
+          <MdFavoriteBorder />
+        </span>
         favorites   
       </a>
     </li>

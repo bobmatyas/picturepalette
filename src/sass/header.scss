@@ -32,6 +32,9 @@
   border-bottom: 1px solid #eee;
   padding: 0 5%;
   box-shadow: 0 5px 10px 0 rgba(102, 102, 102, 0.1);
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
 }
 
 .navigation-menu {
@@ -44,16 +47,22 @@
 
 .navigation-menu li {
   list-style: none;
-  padding: 0 5px;
+  padding: 0 10px;
   color: $navMenuGray;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   text-align: center;
   text-transform: uppercase;
   cursor: pointer;
 }
 
+.navigation-menu li a {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
 .navigation-menu li:nth-child(2) {
-  border-left: 1px solid #eee;
+  border-left: 1px solid #ccc;
 } 
 
 .navigation-menu li a {

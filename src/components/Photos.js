@@ -24,12 +24,6 @@ function Photos(props) {
         console.log(`click`);
         console.log(tags);
         console.log(image);
-        return (
-            <ColorPalette 
-                tags={tags}
-                image={image}
-            />
-        )
     }
 
     return (
