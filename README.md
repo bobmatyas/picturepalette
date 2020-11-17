@@ -1,5 +1,12 @@
 # PicturePalette 
 
+PicturePalette allows creatives to search quality, free stock photography by color - a rarity in the marketing world. This curative app is perfect for creatives looking for photography that compliments their brand colors.
+
+View online:
+
+
+## Refactor
+
 This is a re-write of my final project from the Grand Circus Front End Web Development bootcamp. The initial version of [PicturePalette](https://github.com/bobmatyas/gc-final-project) was written using [AnguarJS](https://www.angularjs.org). 
 
 This version is re-written in [ReactJS](https://www.reactjs.org) to experience the process of refactoring a project using a legacy framework.
@@ -19,6 +26,7 @@ This version is re-written in [ReactJS](https://www.reactjs.org) to experience t
 - Utilized PropTypes library for basic type checking
 - Implemented different header background that didn't rely on painting dozens of empty DIVs
 - Stored favorited palettes in localStorage to persist across sessions rather than as a JS variable
+- Used SVG icons to prevent loading entirety of Material Design icon library
 
 ### Accessibility
 

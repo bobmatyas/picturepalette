@@ -1,5 +1,11 @@
 import React from 'react';
 import ColorButton from './Color-Button';
+import styled from 'styled-components';
+
+const ButtonHolder = styled.div`
+  margin: 0 auto;
+  text-align: center;
+`;
 
 function ColorSelection() {
 
@@ -80,7 +86,7 @@ function ColorSelection() {
         const shuffledColors = shuffleArray(colors);
 
     return (
-        <>
+        <ButtonHolder>
         { 
           shuffledColors.map((color, i) =>
             <ColorButton
@@ -91,7 +97,7 @@ function ColorSelection() {
             />
           )
         }
-        </>
+        </ButtonHolder>
     )
 }
 

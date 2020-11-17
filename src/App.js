@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { HashRouter, Route, Link } from "react-router-dom";
 import Header from './components/Header';
 import Heading from './components/Heading';
 import Welcome from './components/Home-Welcome';
@@ -22,7 +23,6 @@ function App() {
         { color.length < 1 ? ' ' : <HomeSearch /> }
 
       </main>
-
     </>
   );
 }
