@@ -11,6 +11,24 @@ const PhotosHolder = styled.div`
     padding: 3% 5%;
 `;
 
+const PhotosGrid = styled.div`
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+    @media (min-width: 700px) {
+        display: grid;
+        grip-gap: 20px;
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
+        justify-content: center;
+    }
+
+    @media (min-width: 1000px) {        
+        grid-template-columns: repeat(3, minmax(300px, 1fr));
+    }
+`;
+
 const ResultsHeader = styled.h2`
     font-size: 2.4rem;
     color: #353F3E;
@@ -30,6 +48,8 @@ function Photos(props) {
         <PhotosHolder>
             <ResultsHeader>Results</ResultsHeader>
 
+            <PhotosGrid>
+
             { 
              results.map((photo, i) =>
                 <Card
@@ -40,6 +60,7 @@ function Photos(props) {
                 />
               ) 
             }
+            </PhotosGrid>
         </PhotosHolder>
     )
 }
