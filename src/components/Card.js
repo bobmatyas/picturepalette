@@ -2,16 +2,19 @@ import React from 'react';
 //import { useColorContext } from '../ColorProvider';
 //import styled from 'styled-components';
 import './Card.css'
-import ColorPalette from './Color-Extractor';
-import PropTypes from 'prop-types';
 
+import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 
 function Card({tags, image, generatePalette}) {
 
     const showPalette = (tags, image) =>  {
         console.log(tags);
         return generatePalette(tags, image);
+        
     }
+
+    /* ADD CALL COLOR FROM CONTEXT */
 
     return (
         <>
@@ -22,7 +25,14 @@ function Card({tags, image, generatePalette}) {
                 aria-label={tags}
                 style={{backgroundImage: 'url(' + image + ')'}} 
             />
-            <button className="card__button" onClick={ ()=> showPalette(tags, image)}>Generate Palette</button>
+            <Link 
+                className="card__button"
+                to="/Palette" 
+                tags={tags} 
+                image={image}
+                >
+                    Generate Palette
+                </Link>
         </article>
 
         </>

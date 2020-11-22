@@ -42,6 +42,7 @@ function Photos(props) {
         console.log(`click`);
         console.log(tags);
         console.log(image);
+        
     }
 
     return (

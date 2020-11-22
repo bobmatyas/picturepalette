@@ -8,6 +8,7 @@ import {
 import Header from './components/Header';
 import Home from './components/Home';
 import Favorites from './components/Favorites';
+import Palette from './components/Palette';
 
 function App() {
 
@@ -21,7 +22,11 @@ function App() {
         <Route path="/favorites">
           <Favorites />
         </Route>
-        
+        <Route 
+          exact
+          path="/Palette"
+          render={(props) => <Palette {...props} />}
+        />
       <Route path="/">
         <Home />
       </Route>
