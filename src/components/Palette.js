@@ -1,12 +1,19 @@
 import React from 'react';
+import { useColorContext } from '../ColorProvider';
 import ColorPalette from './Color-Extractor';
-import PropTypes from 'prop-types';
+
 
 function Palette() {
 
-    /* RE-ADD CALL TO COLOR PALETTE BASED ON CONTEXT */
+    const { photo } = useColorContext();
+
+    console.log(photo);
+
     return (
-        <></>
+        <ColorPalette 
+            image={photo.image}
+            tags={photo.tags}
+        />
     )
 }
 

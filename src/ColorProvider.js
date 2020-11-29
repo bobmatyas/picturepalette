@@ -10,10 +10,15 @@ export default function ColorProvider ({ children }) {
         setColor(selectedColor);
     }
 
+    const [photo, setPhoto ] = useState([]);
+
+    const selectPhoto = (selectedPhoto) => {
+        setPhoto(selectedPhoto);
+    }
 
     return (
         <ColorContext.Provider 
-            value={{ selectColor, color }} 
+            value={{ selectColor, color, selectPhoto, photo }} 
         >
                 {children}
         </ColorContext.Provider>

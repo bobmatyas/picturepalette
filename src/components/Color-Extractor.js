@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ColorExtractor } from 'react-color-extractor';
+import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Swatch from './Swatch'
@@ -7,12 +8,13 @@ import Swatch from './Swatch'
 const PageLayout = styled.div`
     display: flex;
     margin: 0 5%;
+    padding-top: 10%;
 `;
 
 const PhotoHolder = styled.div`
     background-color: #fff;
     max-width: 45%;
-    padding: 2.5%
+    padding: 2.5%;
 `;
 
 const PaletteHolder = styled.div`
@@ -31,9 +33,12 @@ function ColorPalette(props) {
 
     const colorList = colors => {
         setColors(colors);  
-}
+    }
 
     const image = `https://cors-anywhere.herokuapp.com/${props.image}`;
+
+    if (props.image === undefined)  
+        return <Redirect to="/" />
 
     return (
         <PageLayout>

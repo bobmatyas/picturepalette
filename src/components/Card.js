@@ -1,20 +1,12 @@
 import React from 'react';
-//import { useColorContext } from '../ColorProvider';
-//import styled from 'styled-components';
+import { useColorContext } from '../ColorProvider';
 import './Card.css'
-
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
 function Card({tags, image, generatePalette}) {
 
-    const showPalette = (tags, image) =>  {
-        console.log(tags);
-        return generatePalette(tags, image);
-        
-    }
-
-    /* ADD CALL COLOR FROM CONTEXT */
+    const { selectPhoto } = useColorContext();
 
     return (
         <>
@@ -30,6 +22,16 @@ function Card({tags, image, generatePalette}) {
                 to="/Palette" 
                 tags={tags} 
                 image={image}
+                
+                onClick={() => selectPhoto({
+                    image: image,
+                    tags: tags
+                })}
+                
+                onKeyPress={() => selectPhoto({
+                    image: image,
+                    tags: tags
+                })}   
                 >
                     Generate Palette
                 </Link>
@@ -41,8 +43,7 @@ function Card({tags, image, generatePalette}) {
 
 Card.propTypes = {
     tags: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    generatePalette: PropTypes.func.isRequired
+    image: PropTypes.string.isRequired
 };
 
  export default Card;
