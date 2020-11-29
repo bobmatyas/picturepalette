@@ -1,7 +1,7 @@
 import React from 'react';
 import { useColorContext } from '../ColorProvider';
 import './Card.css'
-import PropTypes from 'prop-types';
+import PropTypes, { nominalTypeHack } from 'prop-types';
 import { Link } from "react-router-dom";
 
 function Card({tags, image, generatePalette}) {
@@ -17,11 +17,24 @@ function Card({tags, image, generatePalette}) {
                 aria-label={tags}
                 style={{backgroundImage: 'url(' + image + ')'}} 
             />
+            <div className="card__info__box">
             <Link 
-                className="card__button"
                 to="/Palette" 
                 tags={tags} 
                 image={image}
+                style={{
+                    dislay: 'block',
+                    backgroundColor: '#eee',
+                    borderRadius: 7 + 'px',
+                    color: '#000',
+                    fontSize: 1.3 + 'rem',
+                    fontWeight: 'bold',
+                    padding: 12 + 'px',
+                    textDecoration: 'none',
+                    border: 0,
+                    width: 50 + '%',
+                    margin: 25 + 'px auto'
+                }}
                 
                 onClick={() => selectPhoto({
                     image: image,
@@ -35,6 +48,7 @@ function Card({tags, image, generatePalette}) {
                 >
                     Generate Palette
                 </Link>
+                </div>
         </article>
 
         </>

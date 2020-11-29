@@ -39,7 +39,7 @@ function HeadingColorSearch() {
     return (
         <Heading>
             <HeadingText>Search</HeadingText> 
-            <HeadingColor style={{color: color.hex}}>{color.color}</HeadingColor> 
+            <HeadingColor style={{color: color.hex}}> {color.color} </HeadingColor> 
             <HeadingText>Photos</HeadingText>
         </Heading>
     )
