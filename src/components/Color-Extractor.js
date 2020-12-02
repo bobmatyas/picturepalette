@@ -3,8 +3,9 @@ import { ColorExtractor } from 'react-color-extractor';
 import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import Swatch from './Swatch'
-import PalettePhotoDownload from './Palette-Download-Photo'
+import Swatch from './Swatch';
+import PalettePhotoDownload from './Palette-Download-Photo';
+import PaletteFavorite from './Palette-Favorite';
 
 const PageLayout = styled.div`
     display: flex;
@@ -55,6 +56,8 @@ function ColorPalette(props) {
     
             { colors ? <Swatch colors={colors} /> :  '' } 
         
+            <PaletteFavorite />
+            
         </PaletteHolder>
         
         </PageLayout>
