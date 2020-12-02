@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Swatch from './Swatch';
 import PalettePhotoDownload from './Palette-Download-Photo';
-import PaletteFavorite from './Palette-Favorite';
+import { MdFavorite } from "react-icons/md";
 
 const PageLayout = styled.div`
     display: flex;
@@ -29,12 +29,35 @@ const PaletteHeading = styled.h2`
     font-size: 2.4rem;
 `;
 
+const FavoriteButton = styled.button`
+    background-color: rgb(238, 238, 238);
+    border-radius: 7px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 12px;
+    text-decoration: none;
+    border: 0px none;
+    width: 100%;
+    margin: 25px auto;
+
+    span { 
+        margin-left: 10px;
+    }
+`;
+
 function ColorPalette(props) {
 
     const [colors, setColors] = useState([]);
 
     const colorList = colors => {
         setColors(colors);  
+    }
+
+    const addFavorite = (colors) => {
+        console.log(`on click`)
+        console.log(colors.colors);
     }
 
     const image = `https://cors-anywhere.herokuapp.com/${props.image}`;
@@ -55,11 +78,29 @@ function ColorPalette(props) {
             <PaletteHeading>Color Palette</PaletteHeading>
     
             { colors ? <Swatch colors={colors} /> :  '' } 
-        
-            <PaletteFavorite />
-            
+
+            <FavoriteButton onClick={ ()=> addFavorite({
+                    colors: colors, 
+                    image: props.image,
+                    tags: props.tags
+                    }) 
+                } 
+                onKeyPress={ ()=> addFavorite({ 
+                    colors: colors,
+                    image: props.image,
+                    tags: props.tags
+                    }) 
+                } 
+            >
+                <MdFavorite />
+                <span>Add to Favorites</span>
+            </FavoriteButton>
+
+
         </PaletteHolder>
-        
+
+    
+
         </PageLayout>
     )
 }
