@@ -1,7 +1,7 @@
 import React from 'react';
 import { useColorContext } from '../ColorProvider';
 import './Card.css'
-import PropTypes, { nominalTypeHack } from 'prop-types';
+import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
 function Card({tags, image, generatePalette}) {

@@ -7,8 +7,6 @@ function Palette() {
 
     const { photo } = useColorContext();
 
-    console.log(photo);
-
     return (
         <ColorPalette 
             image={photo.image}

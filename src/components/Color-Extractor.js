@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import Swatch from './Swatch'
+import PalettePhotoDownload from './Palette-Download-Photo'
 
 const PageLayout = styled.div`
     display: flex;
@@ -45,7 +46,8 @@ function ColorPalette(props) {
         <PhotoHolder>
             <ColorExtractor getColors={colorList} >
                 <img crossOrigin="anonymous" src={image} alt={props.tag} style={{maxWidth: '100%'}}/>
-            </ColorExtractor>       
+            </ColorExtractor>
+            <PalettePhotoDownload />       
         </PhotoHolder>
         
         <PaletteHolder>
