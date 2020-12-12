@@ -49,16 +49,23 @@ const FavoriteButton = styled.button`
 
 function ColorPalette(props) {
 
-    console.log(props);
     const [colors, setColors] = useState([]);
 
     const colorList = colors => {
         setColors(colors);  
     }
 
+    const [favorites, setFavorites] = useState(
+        JSON.parse(localStorage.getItem('favorites')) || []
+    );
+
+
     const addFavorite = (colors) => {
         console.log(`on click`)
-        console.log(colors.colors);
+        console.log(colors);
+        favorites.push(colors);
+        setFavorites(favorites);
+        localStorage.setItem('favorites', JSON.stringify(favorites));
     }
 
     const image = `https://cors-anywhere.herokuapp.com/${props.image}`;
@@ -86,13 +93,19 @@ function ColorPalette(props) {
             <FavoriteButton onClick={ ()=> addFavorite({
                     colors: colors, 
                     image: props.image,
-                    tags: props.tags
+                    tags: props.tags,
+                    imageLarge: props.imageLarge,
+                    imageURL: props.imageURL,
+                    pbid: props.pbid
                     }) 
                 } 
                 onKeyPress={ ()=> addFavorite({ 
                     colors: colors,
                     image: props.image,
-                    tags: props.tags
+                    tags: props.tags,
+                    imageLarge: props.imageLarge,
+                    imageURL: props.imageURL,
+                    pbid: props.pbid
                     }) 
                 } 
             >

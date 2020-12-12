@@ -20,11 +20,6 @@ function Card({tags, image, pbid, imageLarge, imageURL}) {
             <div className="card__info__box">
             <Link 
                 to="/Palette" 
-                tags={tags} 
-                image={image}
-                pbid={pbid}
-                imagelarge={imageLarge}
-                imageurl={imageURL}
                 style={{
                     dislay: 'block',
                     backgroundColor: '#eee',
@@ -42,7 +37,7 @@ function Card({tags, image, pbid, imageLarge, imageURL}) {
                 onClick={() => selectPhoto({
                     image: image,
                     tags: tags,
-                    id: pbid,
+                    pbid: pbid,
                     imageURL: imageURL,
                     imageLarge: imageLarge
                 })}
@@ -50,7 +45,7 @@ function Card({tags, image, pbid, imageLarge, imageURL}) {
                 onKeyPress={() => selectPhoto({
                     image: image,
                     tags: tags,
-                    id: pbid,
+                    pbid: pbid,
                     imageURL: imageURL,
                     imageLarge: imageLarge
                 })}   
