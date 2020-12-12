@@ -61,8 +61,6 @@ function ColorPalette(props) {
 
 
     const addFavorite = (colors) => {
-        console.log(`on click`)
-        console.log(colors);
         favorites.push(colors);
         setFavorites(favorites);
         localStorage.setItem('favorites', JSON.stringify(favorites));
