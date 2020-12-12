@@ -11,6 +11,9 @@ function Palette() {
         <ColorPalette 
             image={photo.image}
             tags={photo.tags}
+            pbid={photo.pbid}
+            imageURL={photo.imageURL}
+            imageLarge={photo.imageLarge}
         />
     )
 }

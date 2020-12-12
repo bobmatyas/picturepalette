@@ -45,8 +45,11 @@ function Photos(props) {
             { 
              results.map((photo, i) =>
                 <Card
+                    pbid={photo.id}
                     key={i}
                     image={photo.webformatURL}
+                    imageLarge={photo.largeImageURL}
+                    imageURL={photo.pageURL}
                     tags={photo.tags}
                 />
               ) 

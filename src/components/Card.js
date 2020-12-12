@@ -4,7 +4,7 @@ import './Card.css'
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
-function Card({tags, image, generatePalette}) {
+function Card({tags, image, pbid, imageLarge, imageURL}) {
 
     const { selectPhoto } = useColorContext();
 
@@ -22,6 +22,9 @@ function Card({tags, image, generatePalette}) {
                 to="/Palette" 
                 tags={tags} 
                 image={image}
+                pbid={pbid}
+                imagelarge={imageLarge}
+                imageurl={imageURL}
                 style={{
                     dislay: 'block',
                     backgroundColor: '#eee',
@@ -38,12 +41,18 @@ function Card({tags, image, generatePalette}) {
                 
                 onClick={() => selectPhoto({
                     image: image,
-                    tags: tags
+                    tags: tags,
+                    id: pbid,
+                    imageURL: imageURL,
+                    imageLarge: imageLarge
                 })}
                 
                 onKeyPress={() => selectPhoto({
                     image: image,
-                    tags: tags
+                    tags: tags,
+                    id: pbid,
+                    imageURL: imageURL,
+                    imageLarge: imageLarge
                 })}   
                 >
                     Generate Palette
@@ -57,7 +66,10 @@ function Card({tags, image, generatePalette}) {
 
 Card.propTypes = {
     tags: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired
+    image: PropTypes.string.isRequired,
+    pbid: PropTypes.number.isRequired,
+    imageLarge: PropTypes.string.isRequired,
+    imageURL: PropTypes.string.isRequired    
 };
 
  export default Card;

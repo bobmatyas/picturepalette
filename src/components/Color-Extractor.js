@@ -49,6 +49,7 @@ const FavoriteButton = styled.button`
 
 function ColorPalette(props) {
 
+    console.log(props);
     const [colors, setColors] = useState([]);
 
     const colorList = colors => {
@@ -71,7 +72,10 @@ function ColorPalette(props) {
             <ColorExtractor getColors={colorList} >
                 <img crossOrigin="anonymous" src={image} alt={props.tag} style={{maxWidth: '100%'}}/>
             </ColorExtractor>
-            <PalettePhotoDownload />       
+            <PalettePhotoDownload 
+                imageURL={props.imageURL}
+                imageLarge={props.imageLarge}
+            />       
         </PhotoHolder>
         
         <PaletteHolder>
@@ -107,7 +111,10 @@ function ColorPalette(props) {
 
 ColorPalette.propTypes = {
     tags: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired
+    image: PropTypes.string.isRequired,
+    pbid: PropTypes.number.isRequired,
+    imageURL: PropTypes.string.isRequired,
+    imageLarge: PropTypes.string.isRequired
 };
 
 export default ColorPalette;
