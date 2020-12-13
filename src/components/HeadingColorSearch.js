@@ -6,28 +6,40 @@ const Heading = styled.h2`
     align-items: center;
     display: flex;
     color: darkgray;
-    font-size: 6rem;
+    flex-direction: column;
     justify-content: center;
-    margin: 0 auto;
+    margin: 15px auto 0 auto;
     text-transform: uppercase;
-}
+
+    @media (min-width: 700px) {
+        flex-direction: row;
+        margin-top: 0;
+    }
 `;
 
 const HeadingText = styled.span`
-    font-size: 5.5rem;    
+    font-size: 3.5rem;    
     font-style: italic;
     font-weight: 500;
+
+    @media (min-width: 700px) {
+        font-size: 4.5rem;
+    }
 `;
 
 
 const HeadingColor = styled.span`
-    font-size: 11rem;
+    font-size: 6rem;
     font-weight: 700;
     padding: 0 20px;
     text-shadow: 2px 2px rgba(0,0,0, 0.2); 
     font-style: italic;
     letter-spacing: -8px;
     margin-left: -10px;
+
+    @media (min-width: 768px) {
+        font-size: 8rem;
+    }
 `;
 
 

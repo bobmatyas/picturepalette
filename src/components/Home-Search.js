@@ -32,12 +32,20 @@ const Search = styled.div`
 `;
 
 const FilterHolder = styled.fieldset`
-  align-items: center;
+  align-items: flex-start;
   border: 2px solid rgba(0,0,0, 0.1);
   border-radius: 5px;
   display: flex;
-  justify-content: center;
-  padding: 25px 50px;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 25px;
+
+  @media (min-width: 768px) {
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+  }
+
 `;
 
 
@@ -86,7 +94,6 @@ function HomeSearch() {
     
     return (
         <>
-        { console.log(data) }
 
         <Search style={{borderTop: '2px solid' + color.hex, borderBottom: '2px solid' + color.hex}}>
 
