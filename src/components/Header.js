@@ -7,6 +7,7 @@ import { MdFavoriteBorder } from "react-icons/md";
 function Header() {
 
 return (
+
 <header className="navigation-container">
       
 <div>
@@ -16,7 +17,7 @@ return (
 <nav>
   <ul className="navigation-menu">
   <li>
-      <Link to="/" >             
+      <Link to="/">             
         <span style={{fontSize: 24+'px'}}>
           <MdSearch />
         </span>

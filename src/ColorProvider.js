@@ -14,6 +14,7 @@ export default function ColorProvider ({ children }) {
 
     const selectPhoto = (selectedPhoto) => {
         setPhoto(selectedPhoto);
+        selectColor('');
     }
 
     return (

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Heading from './Heading';
 import Welcome from './Home-Welcome';
 import ColorSelection from './Color-Selection';
@@ -7,7 +7,7 @@ import { useColorContext } from '../ColorProvider';
 
 function Home() {
 
-    const { color } = useColorContext();
+    const { color } = useColorContext(); 
 
     return (
         <>
