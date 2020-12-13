@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Heading from './Heading';
 import Welcome from './Home-Welcome';
 import ColorSelection from './Color-Selection';
