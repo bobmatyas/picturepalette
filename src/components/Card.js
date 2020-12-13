@@ -3,6 +3,7 @@ import { useColorContext } from '../ColorProvider';
 import './Card.css'
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
+import { MdPalette } from "react-icons/md";
 
 function Card({tags, image, pbid, imageLarge, imageURL}) {
 
@@ -50,7 +51,7 @@ function Card({tags, image, pbid, imageLarge, imageURL}) {
                     imageLarge: imageLarge
                 })}   
                 >
-                    Generate Palette
+                  <span style={{fontSize: 1.6 + 'rem'}}><MdPalette /></span>  Generate Palette
                 </Link>
                 </div>
         </article>

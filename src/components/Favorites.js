@@ -2,23 +2,28 @@ import React, { useState } from 'react';
 import FavoritesHeading from './Favorites-Heading.js';
 import FavoritesCard from './Favorites-Card.js';
 import styled from 'styled-components';
+import { MdDelete } from 'react-icons/md'
 
 const FavoritesWrapper = styled.div`
     margin: 5%;
 `;
 
 const ButtonTrash = styled.button`
-    display: block;
+    align-items: center;
+    display: flex;
     background-color: #eee;
     border-radius: 7px;
     color: #000;
     font-size: 1.3rem;
     font-weight: bold;
+    justify-content: center;
     padding: 12px;
     text-decoration: none;
     border: 0;
     width: 25%;
     margin: 25px auto;
+
+    :hover { cursor: pointer; }
 `;
 
 function Favorites() {
@@ -37,7 +42,7 @@ function Favorites() {
 
         <FavoritesHeading />
 
-        <ButtonTrash onClick={clear}>Clear Favorites</ButtonTrash>
+        <ButtonTrash onClick={clear} onKeyPress={clear}><span style={{fontSize: 1.6 + 'rem'}}><MdDelete /></span> Clear Favorites</ButtonTrash>
 
         <FavoritesWrapper>
         { 

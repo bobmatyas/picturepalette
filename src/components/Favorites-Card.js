@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PalettePhotoDownload from './Palette-Download-Photo';
 import FavoritesSwatch from './Favorites-Swatch';
 import PropTypes from 'prop-types';
