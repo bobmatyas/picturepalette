@@ -4,6 +4,7 @@ PicturePalette allows creatives to search quality, free stock photography by col
 
 View online:
 
+[https://picturepalette2.netlify.app/](https://picturepalette2.netlify.app/)
 
 ## Refactor
 
